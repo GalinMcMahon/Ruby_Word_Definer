@@ -26,4 +26,19 @@ describe("Definitions") do
     end
   end
 
+  describe(".clear") do
+    it("clears the definitions array") do
+      Definitions.new("voom").save()
+      Definitions.clear()
+      expect(Definitions.all()).to(eq([]))
+    end
+  end
+
+  describe("#id") do
+  it("returns the id of the definition") do
+    new_definition = Definitions.new("voom")
+    expect(new_definition.id()).to(eq(1))
+    end
+  end
+
 end

@@ -18,4 +18,12 @@ describe("Definitions") do
     end
   end
 
+  describe("#save") do
+    it("adds a definition to the array of saved definitions") do
+      new_definition = Definitions.new("voom")
+      new_definition.save()
+      expect(Definitions.all()).to(eq([new_definition]))
+    end
+  end
+
 end

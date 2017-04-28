@@ -35,5 +35,12 @@ describe("Definitions") do
     end
   end
 
+  describe("#id") do
+  it("returns the id of the word") do
+    new_word = Words.new("car")
+    expect(new_word.id()).to(eq(1))
+  end
+end
+
 
 end

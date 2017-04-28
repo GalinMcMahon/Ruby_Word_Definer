@@ -1,0 +1,10 @@
+<h1>WORDS.ERB</h1>
+<h2>Click on a word to see the definition of that word</h2>
+
+<ul>
+  <% @words.each() do |word| %>
+    <li><a href="/words/<%= word.id() %>"><%= word.words() %></a></li>
+  <% end %>
+</ul>
+<a href="/word/new">Add a new word</a>
+<a href="/">Return to Main Page</a>

@@ -41,4 +41,12 @@ describe("Definitions") do
     end
   end
 
+  describe(".find") do
+  it("returns definition by its id number") do
+    new_definition = Definitions.new("voom")
+    new_definition.save()
+    expect(Definitions.find(new_definition.id())).to(eq(new_definition))
+    end
+  end
+
 end

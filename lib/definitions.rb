@@ -26,5 +26,13 @@ class Definitions
     @id
   end
 
-
+  define_singleton_method(:find) do |id|
+    found_definition = nil
+    @@definitions.each() do |definition|
+      if definition.id().eql?(id.to_i)
+        found_definition = definition
+      end
+    end
+    found_definition
+  end
 end

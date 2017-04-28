@@ -19,7 +19,13 @@ describe("Definitions") do
     end
   end
 
-
+  describe("#save") do
+    it("adds a word to the array of saved words") do
+      new_word = Words.new("car")
+      new_word.save()
+      expect(Words.all()).to(eq([new_word]))
+    end
+  end
 
 
 

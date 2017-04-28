@@ -11,4 +11,11 @@ describe("Definitions") do
       expect(new_definition.definition()).to(eq("voom"))
     end
   end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Definitions.all()).to(eq([]))
+    end
+  end
+
 end

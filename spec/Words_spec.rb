@@ -42,5 +42,13 @@ describe("Definitions") do
   end
 end
 
+describe(".find") do
+  it("returns word by its id number") do
+    new_word = Words.new("car")
+    new_word.save()
+    expect(Words.find(new_word.id())).to(eq(new_word))
+  end
+end
+
 
 end

@@ -19,18 +19,21 @@ get('/words') do
   erb(:words)
 end
 # # push word form "form action" to word array
+
+
 post('/words') do
-  word = params.fetch('inputted_word')
-  Words.new(word).save()
+  word_new = params.fetch('inputted_word')
+  Words.new(word_new).save()
   @words = Words.all()
   erb(:words)
 end
+
+
 # # click on artist name to route to artist page
 get ('/word/:id') do
   @word = Words.find(params.fetch('id').to_i())
   erb(:word)
 end
-#
 # enables 'add new album' to route to album form
 get('/definition_form') do
   erb(:definition_form)

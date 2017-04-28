@@ -37,4 +37,11 @@ class Words
     found_word
   end
 
+  define_method(:all_words) do
+    @all_words
+  end
+
+  define_method(:add_definition) do |definition|
+    @all_words.push(definition)
+  end
 end

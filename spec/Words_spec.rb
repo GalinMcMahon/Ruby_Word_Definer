@@ -50,5 +50,15 @@ describe(".find") do
   end
 end
 
+describe("#add_definition") do
+  it("adds a new definition to a word") do
+    new_word = Words.new("car")
+    new_definition = Definitions.new("voom")
+    new_word.add_definition(new_definition)
+    expect(new_word.all_words()).to(eq([new_definition]))
+    end
+  end
+
+
 
 end

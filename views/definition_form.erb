@@ -1,8 +1,11 @@
 <h1>What does <%= @word.word() %> mean??</h1>
-<form>
+
 <form action="/definitions" method="post">
+  <input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
   <label for="inputted_definition">New album:</label>
     <input id="inputted_definition" name="inputted_definition" type="text">
 
     <button type="submit">That's what it means!</button>
 </form>
+
+<a href="/">Return to Main Page</a>

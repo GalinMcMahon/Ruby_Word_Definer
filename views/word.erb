@@ -4,14 +4,13 @@
 
 
 
+<h2>Definition should appear here</h2>
+
 <ul>
-  <% @word.all_words().each() do |definitions| %>
-    <li><a href="/words/<%= definition.id() %>"><%= all_words.definition() %></a></li>
+  <% @word.all_words().each() do |all_words| %>
+    <li><a href="/definitions/<%= all_words.id() %>"><%= all_words.inputted_definition() %></a></li>
   <% end %>
 </ul>
-
-
-<h2>Definition should appear here</h2>
 
 <a href="/words/<%= @word.id()%>/definition/new">Add a definition</a>
 <a href="/">Return to Main Page</a>

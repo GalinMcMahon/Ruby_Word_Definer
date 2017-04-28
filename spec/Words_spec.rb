@@ -27,7 +27,13 @@ describe("Definitions") do
     end
   end
 
-
+  describe(".clear") do
+    it("clears the word array") do
+      Words.new("car").save()
+      Words.clear()
+      expect(Words.all()).to(eq([]))
+    end
+  end
 
 
 end

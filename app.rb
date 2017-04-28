@@ -19,16 +19,12 @@ get('/words') do
   erb(:words)
 end
 # # push word form "form action" to word array
-
-
 post('/words') do
   word_new = params.fetch('inputted_word')
   Words.new(word_new).save()
   @words = Words.all()
   erb(:words)
 end
-
-
 # # click on artist name to route to artist page
 get ('/word/:id') do
   @word = Words.find(params.fetch('id').to_i())
@@ -43,16 +39,28 @@ get('/definition_form') do
   @definition = Definitions.all()
   erb(:word)
 end
+
+# #
+# get ('/inputted_definition/:id') do
+#   @definition = Definitions.find(params.fetch('id').to_i())
+#   erb(:definition)
+# end
 #
-get ('/inputted_definition/:id') do
-  @definition = Definitions.find(params.fetch('id').to_i())
-  erb(:definition)
-end
-#
-get('/words/:id/words/new') do
+# get('/definition/new') do
+#   @word = Words.find(params.fetch('id').to_i())
+#   erb(:definition_form)
+# end
+
+
+
+get('/words/:id/definition/new') do
   @word = Words.find(params.fetch('id').to_i())
-  erb(:word_definition_form)
+  erb(:definition_form)
 end
+
+
+
+
 #
 post('/inputted_definition') do
   definition = params.fetch('definition')

@@ -1,13 +1,16 @@
-<h1>WORD.ERB</h1>
-
-<h2><%= @word.word() %></h2>
-<h2>Definition should appear here</h2>
-
-<ul>
+<h2>
+  <!-- defined word below -->
+  <%= @word.word() %> means
+  <!-- definition below -->
   <% @word.all_words().each() do |all_words| %>
-    <li><a href="/definitions/<%= all_words.id() %>"><%= all_words.definition() %></a></li>
+    <%= all_words.definition() %>
   <% end %>
-</ul>
+</h2>
 
-<a href="/words/<%= @word.id()%>/definition/new">Add a definition</a>
+
+
+
+
+<a href="/words/<%= @word.id()%>/definition/new" <% @word.all_words().each() do |all_words| %>
+  <%= all_words.definition().clear() %><% end %>>Add a definition</a>
 <a href="/">Return to Main Page</a>

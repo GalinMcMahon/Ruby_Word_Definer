@@ -1,14 +1,11 @@
 <h1>WORD.ERB</h1>
 
-<h2>Word should appear here</h2>
-
-
-
+<h2><%= @word.word() %></h2>
 <h2>Definition should appear here</h2>
 
 <ul>
   <% @word.all_words().each() do |all_words| %>
-    <li><a href="/definitions/<%= all_words.id() %>"><%= all_words.inputted_definition() %></a></li>
+    <li><a href="/definitions/<%= all_words.id() %>"><%= all_words.definition() %></a></li>
   <% end %>
 </ul>
 

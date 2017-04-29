@@ -47,7 +47,8 @@ end
 
 post('/definitions') do
   definition = params.fetch('inputted_definition')
-  Definitions.new(definition).save()
+  @definition = Definitions.new('inputted_definition')
+  @definition.save()
   @word = Words.find(params.fetch('word_id').to_i())
   @word.add_definition(@definition)
   @words = Words.all()

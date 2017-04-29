@@ -1,16 +1,15 @@
 <h2>
   <!-- defined word below -->
-  <%= @word.word() %> means
+  <%= @word.word() %> means: <br>
   <!-- definition below -->
   <% @word.all_words().each() do |all_words| %>
-    <%= all_words.definition() %>
+    <%= all_words.definition() %><br>
   <% end %>
 </h2>
-
-
-
-
-
-<a href="/words/<%= @word.id()%>/definition/new" <% @word.all_words().each() do |all_words| %>
-  <%= all_words.definition().clear() %><% end %>>Add a definition</a>
-<a href="/">Return to Main Page</a>
+<br>
+<h3>
+  <a href="/words/<%= @word.id()%>/definition/new" <% @word.all_words().each() do |all_words| %>
+  <%= all_words.definition() %><% end %></h3><br><h3>Add a definition</a>
+  <br><br>
+  <a href="/words">Go back to the word list</a>
+</h3>

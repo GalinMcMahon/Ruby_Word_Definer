@@ -11,7 +11,7 @@ get('/') do
 end
 # click on 'Add a new word to route to word form'
 get('/word/new') do
-  erb(:word_form)
+  erb(:wordform)
 end
 # # click on 'Add Word' in word form to route to list of all words (words.erb)
 get('/words') do
